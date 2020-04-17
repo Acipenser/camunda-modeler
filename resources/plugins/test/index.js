@@ -10,6 +10,5 @@
 
 module.exports = {
   menu: './menu',
-  name: 'test',
-  style: './style.css'
+  name: 'test'
 };
