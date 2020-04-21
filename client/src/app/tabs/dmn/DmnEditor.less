@@ -9,13 +9,116 @@
     position: relative;
   }
 
+  .dmn-js-parent {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .dmn-overview-container {
+    position: relative;
+    width: 33%;
+
+    background-color: #fafafa;
+    border-right: solid 1px #ddd;
+
+    &.collapsed {
+      width: 105px;
+
+      .dmn-drd-container {
+        display: none;
+      }
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    .toggle {
+      color: #444;
+      position: absolute;
+      right: -1px;
+      top: 50%;
+      background: #fff;
+      padding: 7px 10px;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: bold;
+      border: solid 1px #CCC;
+      border-right: none;
+      border-radius: 2px 2px 0 0;
+      transform-origin: top left;
+      z-index: 10;
+      cursor: default;
+      user-select: none;
+    }
+
+    .edit-drd {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+
+      background: #fff;
+      padding: 8px;
+      border: solid 1px #ddd;
+      border-radius: 2px;
+      font-size: 14px;
+      color: #444;
+      font-weight: bold;
+      cursor: default;
+      outline: none;
+      z-index: 10;
+    }
+
+    .djs-element {
+      .djs-outline {
+        display: none;
+      }
+
+      .djs-visual rect {
+        fill: #fafafa !important;
+      }
+
+      &.can-open {
+        &.open,
+        &:hover {
+          .djs-visual {
+            rect {
+              stroke: #4285f4 !important;
+              fill: #cfe0fc !important;
+            }
+  
+            text {
+              fill: #4285f4 !important;
+            }
+          }
+        }
+      }
+    }
+
+    .djs-overlay .drill-down-overlay {
+      background:transparent;
+      pointer-events: none;
+      color: #000;
+    }
+  }
+
   .dmn-decision-table-container,
   .viewer-container {
     padding: 10px;
   }
 
+  .decision-id,
+  .decision-table-id {
+    display: none;
+  }
+
   .djs-overlay .drill-down-overlay {
-    padding: 0px 5px 2px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background: #4285f4;
+    text-align: center;
+    border-radius: 2px;
   }
 
   .djs-container > .dmn-definitions {
