@@ -79,10 +79,8 @@ jobs:
         npm run build -- --mac --nightly --publish
 
 stages:
-  - name: test
   - name: "distro"
     if: tag =~ ^v\d
   - name: "post distro"
     if: tag =~ ^v\d
   - name: "nightly build"
-    if: type IN (cron)
